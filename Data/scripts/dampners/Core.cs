@@ -95,6 +95,9 @@ namespace Dondelium.Dampeners{
     }
 
     public void Update(){
+      var control = character as Sandbox.Game.Entities.IMyControllableEntity;
+      if (control.RelativeDampeningEntity != null) return;
+
       if (character.EnabledDamping) character.SwitchDamping();
     }
   }
